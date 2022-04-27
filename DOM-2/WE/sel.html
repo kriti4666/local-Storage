@@ -1,0 +1,55 @@
+<html>
+  <head>
+    <title>Practise Selectors</title>
+  </head>
+  <body>
+    <h1>First H1</h1>
+    <h1>Second H1</h1>
+    <h3>First H3</h3>
+    <h3>Second H3</h3>
+    <h5>First H5</h5>
+    <h5>Second H5</h5>
+    <h5>Third H5</h5>
+    <div class="green">First DIV</div>
+    <div class="red">Second DIV</div>
+    <div class="blue">Third DIV</div>
+    <p class="green">First P</p>
+    <p class="red">Second P</p>
+    <p class="blue">Third P</p>
+    <hr />
+    <button id="btn1">Change H1</button>
+    <button id="btn2">Change H3</button>
+    <button id="btn3">Change H5</button>
+    <button id="btn4">Change Green</button>
+    <button id="btn5">Change Red</button>
+    <button id="btn6">Change Blue</button>
+  </body>
+</html>
+
+<script>
+  document.querySelector("#btn1").addEventListener("click", changeH1);
+
+  function changeH1() {
+    document.querySelector("h1").style.color = "red";
+  }
+
+  document.querySelector("#btn2").addEventListener("click", changeAllH3);
+
+  function changeAllH3() {
+    var h3 = document.querySelectorAll("h3");
+    console.log(h3);
+    for (var i = 0; i < h3.length; i++) {
+      h3[i].style.color = "green";
+    }
+  }
+
+  document.querySelector("#btn4").addEventListener("click", changeGreenClass);
+
+  function changeGreenClass() {
+    var green = document.querySelectorAll(".green");
+    console.log(green);
+    for(var i = 0; i < green.length; i++) {
+          green[i].style.color = "green";
+    }
+  }
+</script>

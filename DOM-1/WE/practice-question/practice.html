@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2 id="like">show likes here</h2>
+    <h2 id="dislike">show dislikes here</h2>
+    <h2 id="head"> DOM-1 Complete the assignment</h2>
+    <button onclick="likeFun()">likes</button>
+    <button onclick="dislikeFun()">dislikes</button>
+    <button id="btn" onclick="completeAssign()">Mark as complete</button>
+</body>
+</html>
+
+<script>
+    var like = 0;
+    var dislike = 0;
+    
+    function likeFun(){
+        like+=1;
+        // console.log(like);
+        document.getElementById("like").innerText=like;
+    }
+    function dislikeFun(){
+        dislike+=1;
+        // console.log(dislike);
+        document.getElementById("dislike").innerText=dislike;
+    }
+    function completeAssign() {
+        document.getElementById("btn").innerText="Completed"
+        document.getElementById("btn").style.backgroundColor="teal"
+        document.getElementById("head").innerText="Done"
+    }
+</script>

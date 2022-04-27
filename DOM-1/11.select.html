@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <select id="gender">
+      <option value="">Select gender</option>
+      <option value="MALE">Male</option>
+      <option value="FEMALE">Female</option>
+    </select>
+    <button onClick="getGender()">Submit</button>
+  </body>
+</html>
+
+<script>
+  function getGender() {
+    var gen = document.getElementById("gender").value;
+    console.log(gen);
+  }
+</script>
+
+

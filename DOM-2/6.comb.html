@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      /* h3, div+h3, .container+h3,body>h3, p+div+h3, body h3 */
+    </style>
+  </head>
+  <body>
+    <p id="para">I am para</p>
+    <div class="container">
+      <p>p1</p>
+      <p>p2</p>
+      <p>p3</p>
+    </div>
+    <h3>I am head 3</h3>
+    <div id="box">I am div</div>
+    <h5>I am heading 5</h5>
+    <h3>I am h3.1</h3>
+  </body>
+</html>
+
+
+<script>
+      // combinators inside querySelector /querySelectorAll
+      var x = document.querySelectorAll("div+h3")
+      console.log(x[0].innerText)
+</script>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bozaz Products</title>
+    <style>
+        #container{
+            margin: 0px;
+            padding: 0px;
+        }
+        #container > div{
+            width: 90%;
+            margin: auto;
+        }
+        body{
+            background-color: aliceblue;
+        }
+        #container > div:nth-child(1){
+            background-color: white;
+            margin: auto;
+            width: 10px 80%;
+            padding: 40px 0px;
+            margin: 10px;
+        }
+        #products > div{
+            width: 25%;
+        }
+
+        #container > div:nth-child(2){
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+        }
+        h1{
+            text-align: center;
+        }
+        input,select{
+            display: block;
+            width: 80%;
+            margin: 10px auto;
+            padding: 1% 5px;
+        }
+
+    </style>
+</head>
+<body>
+   <div id="container">
+       <div>
+           <h1>Add Some Produtct</h1>
+           <form id="form">
+               <select name="" id="category">
+                   <option value="electronics">Electronics</option>
+                   <option value="furniture">Furniture</option>
+                   <option value="home appliance">Home appliance</option>
+                   <option value="books ">Books </option>
+               </select>
+               <input type="text" name="" id="title">
+               <input type="text" name="" id="desc">
+               <input type="number" name="" id="price">
+               <input type="submit">
+           </form>
+       </div>
+       <div id="products">
+
+       </div>
+   </div> 
+</body>
+</html>
+
+<script>
+    // dom variables
+    var form = document.querySelector("#form");
+    var prod = document.querySelector("#products")
+
+    // All function
+    function display(data) {
+
+        var parent = document.createElement("div")
+
+        var heading = document.createElement("h2");
+        heading.innerText=data.category;
+
+        var title = document.createElement("p")
+        title.innerText=data.title;
+
+        var desc= document.createElement("p")
+        desc.innerText=data.desc;
+
+        var price = document.createElement("p")
+        price.innerText=data.price;
+
+        parent.append(heading, title, desc, price);
+
+        prod.append(parent);
+
+    }
+    form.addEventListener("submit", function(event){
+
+    event.preventDefault();
+
+    var data={
+        title:form.title.value,
+        desc:form.desc.value,
+        price:form.price.value,
+        category:form.category.value,
+    }
+    console.log(data);
+    })
+</script>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1 id="head1">I am h1 tag</h1>
+    <h2 class="head-2">I am h2 tag</h2>
+    <p class="head-2">I am para</p>
+    <div class="head-2">I am div</div>
+  </body>
+</html>
+
+<script>
+  var h1 = document.getElementById("head1");
+  console.log(h1);
+
+  var arr = document.getElementsByClassName("head-2");
+  console.log(arr);
+  //console.log(arr); // [h2.head-2, p.head-2, div.head-2]
+  //   console.log(arr[0].innerText);
+  //   console.log(arr[1]);
+  //   console.log(arr[2]);
+
+  for (var i = 0; i < arr.length; i++) {
+    console.log(arr[i]);
+  }
+</script>

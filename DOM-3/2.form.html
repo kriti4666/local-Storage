@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form>
+      <input id="name" type="text" placeholder="Enter name" />
+      <input id="mob" type="number" placeholder="Enter mobile number" />
+      <input type="submit" value="Login" />
+    </form>
+  </body>
+</html>
+
+<script>
+  // form consists of input tags
+  //   document.querySelector("button").addEventListener("click", myFunction);
+
+  //   function myFunction() {
+  //     var name = document.querySelector("#name").value;
+  //     var mob = document.querySelector("#mob").value;
+  //     console.log(name, mob);
+  //   }
+
+  // forms will contain input tags
+  //   Steps for using forms
+  //   1. Wrap your input tags inside form tag
+  //   2. Instead of button you should use  input type="submit"
+  //  3. whenever you are using forms, you should add eventListener to form tag
+  //  4. Event name should be submit addEventListener("submit", myFunction)
+  // 5. forms by default tries to send data to backend when you click on submit
+  // 6. to stop default behaviour use event.preventDefault()
+
+  document.querySelector("form").addEventListener("submit", myFunction);
+
+  function myFunction() {
+    event.preventDefault();
+    //console.log("Inside my function");
+    var name = document.querySelector("#name").value;
+    var mob = document.querySelector("#mob").value;
+    console.log(name, mob);
+  }
+</script>

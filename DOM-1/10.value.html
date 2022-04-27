@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input id="name" type="text" value="" />
+    <input id="mbl" type="number" placeholder="mobile number" value="" />
+    <input id="mail" type="email" placeholder="enter email" value="" />
+    <button onClick="catchValue()">Submit</button>
+    <h1 id="display-name">Show name here</h1>
+    <h1 id="display-mbl">Show mobile here</h1>
+    <h1 id="display-mail">Show email here</h1>
+  </body>
+</html>
+
+<script>
+  function catchValue() {
+    var studentName = document.getElementById("name").value
+    var mblNum = document.getElementById("mbl").value
+    var mailId = document.getElementById("mail").value
+
+    document.getElementById("display-name").innerText = studentName
+    document.getElementById("display-mbl").innerText = mblNum
+    document.getElementById("display-mail").innerText = mailId
+
+  }
+</script>

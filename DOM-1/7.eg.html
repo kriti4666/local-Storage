@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <img
+      height="200"
+      width="200"
+      src="https://masai-website-images.s3.ap-south-1.amazonaws.com/Nrupul_d3fe3b289a.jpg"
+      alt=""
+    />
+    <br />
+    <h2 id="likes">Show likes count here</h2>
+    <h2 id="dislikes">Show dislikes count here</h2>
+    <button onClick="likeFun()">Like</button>
+    <button onClick="dislikeFun()">Dislike</button>
+  </body>
+</html>
+
+<script>
+  var likes = 0;
+  var dislikes = 0;
+
+  function likeFun() {
+    likes++;
+    //console.log(likes);
+    document.getElementById("likes").innerText = "likes -" + likes;
+  }
+
+  function dislikeFun() {
+    dislikes++;
+    //console.log(dislikes);
+    document.getElementById("dislikes").innerText = "dislikes -" + dislikes;
+  }
+</script>

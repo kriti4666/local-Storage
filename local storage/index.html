@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+
+<script>
+    localStorage.setItem("name","kamakshi")
+    localStorage.setItem("pet", "pikku")
+
+    // to getitems:
+    var petName = localStorage.getItem("pet")
+    // console.log(petName)
+
+    var arr = [1, 2, 3, 4];
+    localStorage.setItem("luckyNumber", JSON.stringify(arr));
+    var num = JSON.parse(localStorage.getItem("luckyNumber"));
+    console.log(num);  
+
+    var names = ["anil", "meena", "ram"];
+    localStorage.setItem("studentName",JSON.stringify(names));
+
+    var out = JSON.parse(localStorage.getItem("studentName"));
+    console.log(out);
+
+    // objects:
+    var namesObj = {name:"kriti",place:"ramgarh"};
+    localStorage.setItem("dataObj", JSON.stringify(namesObj));
+
+    var obj = JSON.parse(localStorage.getItem("dataObj"));
+    console.log(obj);
+
+</script>

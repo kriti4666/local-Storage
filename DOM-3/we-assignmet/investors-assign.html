@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #container{
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: auto;
+            gap: 20px;
+        }
+        #container> div{
+            border-radius: 10px;
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        }
+        h3,p{
+            text-align: center;
+            font-size: medium;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+        div > avatar{
+            width: 100%;
+        }
+
+    </style>
+
+</head>
+<body>
+    <div id="container">
+
+    </div>
+</body>
+</html>
+
+<script>
+    var investorsData = [
+        {avatar: "https://masai-website-images.s3.ap-south-1.amazonaws.com/Vijay_Shekhar_Sharma_Paytm_96f52579b8.jpg", name: "Vijay Shekhar Sharma", position: "Founder & CEO", logo: "https://masai-website-images.s3.ap-south-1.amazonaws.com/paytm_rect_06df45a24f.svg"},
+        {avatar: "https://masai-website-images.s3.ap-south-1.amazonaws.com/Rectangle_427_637d69bb57.png", name: "Kunal Shah", position: "Founder", logo: "https://masai-website-images.s3.ap-south-1.amazonaws.com/cred_0a47d7b4f8.png"},
+        {avatar: "https://masai-website-images.s3.ap-south-1.amazonaws.com/amrish_rau_pine_labs_144e5e587c.jpg", name: "Amrish Rau", position: "Founder", logo: "https://masai-website-images.s3.ap-south-1.amazonaws.com/pine_labs_0aa2407434.png"},
+        {avatar: "https://masai-website-images.s3.ap-south-1.amazonaws.com/Sampad_swain_Instamojo_f12bf6341e.jpg", name: "Sampad Swain", position: "Founder & CEO", logo: "https://masai-website-images.s3.ap-south-1.amazonaws.com/instamojo_8763e704f7.png"},
+    ];
+
+    investorsData.forEach(function(ele){
+        var box = document.createElement("div");
+        
+        var profile = document.createElement("img");
+        profile.setAttribute("src",ele.avatar)
+
+        var name = document.createElement("h3");
+        name.innerText=ele.name;
+
+        var position = document.createElement("p");
+        position.innerText=ele.position;
+
+        var logo = document.createElement("img");
+        logo.setAttribute("src", ele.logo);
+
+        box.append(profile, name, position, logo);
+
+        document.querySelector("#container").append(box);
+    })
+</script>

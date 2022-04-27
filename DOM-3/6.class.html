@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .container {
+        font-size: 60px;
+        color: teal;
+      }
+
+      .masai {
+        background-color: red;
+      }
+
+      body > .container {
+        font-size: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- <div class="container masai">I am div</div> -->
+  </body>
+</html>
+
+<script>
+  var box = document.createElement("div");
+  box.innerText = "I am div";
+  box.setAttribute("class", "container masai");
+  box.setAttribute("id", "vaibhav");
+  document.querySelector("body").append(box);
+</script>

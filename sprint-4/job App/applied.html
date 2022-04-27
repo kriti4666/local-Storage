@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Database</title>
+    <link rel="stylesheet" href="commonStyles.css" />
+  </head>
+
+  <body>
+    <div id="links">
+      <div><a href="index.html">Home</a></div>
+      <div><a href="applied.html">Applied Jobs</a></div>
+      <div><a href="bookmark.html">Bookmarks</a></div>
+    </div>
+
+    <main>
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Job applied</th>
+            <th>Salary expected</th>
+            <th>Add to bookmark</th>
+          </tr>
+        </thead>
+        <tbody id="body">
+          <!-- Append your output to tbody -->
+        </tbody>
+      </table>
+    </main>
+  </body>
+  <script>
+    //you need to code here
+    var jobArray = JSON.parse(localStorage.getItem("jobList"))
+    
+    var bookmarkArr = JSON.parse(localStorage.getItem("Bookmarks")) || [];
+    displayData(jobArray)
+
+    // sum of all salary in the bookmark:
+    var sum = jobArray.reduce(function(acc,elem){
+      return acc+Number(elem.applicantSalary);
+    })
+    console.log(sum);
+
+    function displayData(data){
+      data.forEach(function(elem) {
+        var tr = document.createElement("tr");
+
+        var td1 = document.createElement("td");
+        td1.innerText=elem.applicantName;
+
+        var td2 = document.createElement("td");
+        td2.innerText=elem.applicantEmail;
+
+        var td3 = document.createElement("td");
+        td3.innerText=elem.applicantRole;
+
+        var td4 = document.createElement("td");
+        td4.innerText=elem.applicantSalary;
+
+        var td5 = document.createElement("td");
+        td5.innerText="Bookmark";
+        td5.style.color="blue";
+        td5.style.cursor="pointer";
+
+        td5.addEventListener("click",function(){
+          bookmarksFunction(elem )
+        })
+
+        tr.append(td1, td2, td3, td4, td5);
+
+        document.querySelector("#body").append(tr);
+      });
+      console.log(displayData)
+    
+    }
+    function bookmarksFunction(elem){
+      bookmarkArr.push(elem);
+      console.log(elem)
+      localStorage.setItem("Bookmarks", JSON.stringify(bookmarkArr))
+    }
+  </script>
+</html>

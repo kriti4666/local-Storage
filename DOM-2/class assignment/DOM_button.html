@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* #container{
+            height: 200px;
+            width: 100%;
+            border: 1px solid red;
+            display: grid;
+            grid-template-columns: repeat(9,1fr);
+            grid-template-rows: 120px;
+            gap: 20px;
+        }
+        #container>div{
+            border: 1px solid teal;
+            margin-top: 50px;
+        } */
+    </style>
+</head>
+<body>
+    <div id="container">
+        <!-- <div>
+            <button>Primary</button>
+        </div>
+        <div>
+            <button>Secondary</button>
+        </div>
+        <div>
+            <button>Success</button>
+        </div>
+        <div>
+            <button>Danger</button>
+        </div>
+        <div>
+            <button>Warning</button>
+        </div>
+        <div>
+            <button>Info</button>
+        </div>
+        <div>
+            <button>Light</button>
+        </div>
+        <div>
+            <button>Dark</button>
+        </div>
+        <div>
+            <button>Link</button>
+        </div> -->
+    </div>
+</body>
+</html>
+
+<script>
+    var buttonObj = [
+        {name:"Primary", color: "white", bgColor: "blue"},
+        {name:"Secondary", color: "white", bgColor: "grey"},
+        {name:"Success", color: "white", bgColor: "red"},
+        {name:"Danger", color: "black", bgColor: "yellow"},
+        {name:"Warning", color: "black", bgColor: "cyan"},
+        {name:"Info", color: "black", bgColor: "white"},
+        {name:"Light", color: "black", bgColor: "green"},
+        {name:"Dark", color: "white", bgColor: "black"},
+        {name:"Link", color: "blue", bgColor: "white"},
+    ]
+
+    buttonObj.forEach(function(ele) {
+        console.log(ele.bgColor);
+        var btn = document.createElement("button");
+        btn.innerText = ele.name;
+        btn.style.backgroundColor = ele.bgColor;
+        btn.style.color = ele.color;
+        document.querySelector("body").append(btn);
+    });
+</script>

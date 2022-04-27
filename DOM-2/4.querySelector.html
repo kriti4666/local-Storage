@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p>I am p6</p>
+    <div id="box">I am div</div>
+    <div class="head-1">I am div</div>
+
+    <h1 class="head-1">I am heading1</h1>
+    <p>p2</p>
+    <p>p3</p>
+    <p>p4</p>
+    <p>p5</p>
+  </body>
+</html>
+
+<script>
+  //   //getElemetById
+  //   var div = document.getElementById("box");
+  //   console.log(div);
+
+  //   //getElementsByClassName
+  //   var heading1 = document.getElementsByClassName("head-1");
+  //   console.log(heading1);
+
+  //   //getElementsByTagName
+  //   var para = document.getElementsByTagName("p");
+  //   console.log(para);
+
+  //querySelector
+  //class - .
+  //id - #
+  //tag - tagName
+
+  //id selector
+  var divNew = document.querySelector("#box");
+  console.log(divNew);
+
+  // class selector
+  var heading1 = document.querySelector(".head-1");
+  console.log(heading1);
+
+  // tagName
+  var para = document.querySelector("p");
+  console.log(para);
+
+  // querySelector will select only the first element which matches the query
+</script>

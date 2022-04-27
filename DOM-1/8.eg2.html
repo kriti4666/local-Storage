@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1 id="head-1">DOM-1 Assignment</h1>
+    <button id="btn" onClick="completeAssig()">Mark as Complete</button>
+  </body>
+</html>
+
+<script>
+  function completeAssig() {
+    document.getElementById("head-1").innerText = "DOM-1 Assignment Completed";
+    document.getElementById("btn").innerText="Completed"
+    document.getElementById("btn").style.backgroundColor="green"
+    document.getElementById("btn").style.color="white"
+    
+
+  }
+</script>

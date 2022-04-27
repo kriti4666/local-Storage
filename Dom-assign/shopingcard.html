@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #container{
+            /* height: 400px;
+            width: 100%;
+            border: 1px solid red; */
+            display: flex;
+            
+        }
+        #container > div{
+            padding-right: 50px;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+</body>
+</html>
+
+<script>
+   var data = [
+    {
+        imgUrl:"https://preview.colorlib.com/theme/eiser/img/product/inspired-product/xi1.jpg.pagespeed.ic.mkSk-Af1ka.webp",
+        name:"LATEST MEN’S SNEAKER",
+        price:"$25.00",
+        strikedOffPrice:"$95.00"
+    },
+    {
+        imgUrl:"https://preview.colorlib.com/theme/eiser/img/product/inspired-product/xi2.jpg.pagespeed.ic.uBrpABaJqp.webp",
+        name:"LATEST MEN’S SNEAKER",
+        price:"$35.00",
+        strikedOffPrice:"$100.00"
+    },
+    {
+        imgUrl:"https://preview.colorlib.com/theme/eiser/img/product/inspired-product/xi3.jpg.pagespeed.ic.iO_cFEPy2K.webp",
+        name:"LATEST MEN’S SNEAKER",
+        price:"$35.00",
+        strikedOffPrice:"$100.00"
+    },
+    {
+        imgUrl:"https://preview.colorlib.com/theme/eiser/img/product/inspired-product/xi4.jpg.pagespeed.ic.kmiQW8I5wx.webp",
+        name:"LATEST MEN’S SNEAKER",
+        price:"$35.00",
+        strikedOffPrice:"$100.00"
+    }
+]
+
+    var list = data.map(function (ele) {
+    var box = document.createElement("div");
+
+    var imgTag = document.createElement("img");
+    imgTag.setAttribute("src",ele.imgUrl)
+
+    var listName = document.createElement("h2");
+    listName.innerText=ele.name;
+
+    var tagPrice = document.createElement("h2");
+    tagPrice.innerText=ele.price;
+
+    var discount = document.createElement("h3");
+    discount.innerText=ele.strikedOffPrice;
+    discount.style.textDecoration="line-through";
+
+    box.append(imgTag, listName, tagPrice, discount);
+
+    document.querySelector("#container").append(box);
+
+    console.log(box);
+})
+
+</script>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      /* #container{
+            width: 80%; 
+            padding: 15px;
+            display: flex;
+            justify-content: space-evenly;
+            margin: auto;
+        }
+        #container > button {
+            flex-grow: 1;
+            margin: 0 5px;
+            padding: 10px;
+            border-radius: 5px;
+            border: 0;
+            background-color: #007bfe;
+            color: white;
+            font-weight: 500;
+            font-size: 20px;
+        }
+        #container > button:hover {
+            cursor: pointer;
+        }
+        #container > button:nth-child(2) {
+            background-color: #6c757d;
+        }
+        #container > button:nth-child(3) {
+            background-color: #28a745;
+        }
+        #container > button:nth-child(4) {
+            background-color: #db3544;
+        }
+        #container > button:nth-child(5) {
+            background-color: #ffc107;
+            color: black;
+        }
+        #container > button:nth-child(6) {
+            background-color: #12a3b8;
+        }
+        #container > button:nth-child(7) {
+            background-color: #f8f9fa;
+            color: black;
+        }
+        #container > button:nth-child(8) {
+            background-color: #343a3f;
+        }
+        #container > button:nth-child(9) {
+            background-color: #ffffff;
+            color: #187ffd;
+        } */
+    </style>
+  </head>
+  <body>
+    <!-- <button>Primary</button>
+        <button>Secondary</button>
+        <button>Success</button>
+        <button>Danger</button>
+        <button>Warning</button>
+        <button>Info</button>
+        <button>Light</button>
+        <button>Dark</button>
+        <button>Link</button> -->
+  </body>
+</html>
+
+<script>
+  var buttonObj = [
+    { name: "Primary", color: "white", bgColor: "blue" },
+    { name: "Secondary", color: "white", bgColor: "grey" },
+    { name: "Danger", color: "white", bgColor: "red" },
+    { name: "Warning", color: "black", bgColor: "yellow" },
+    { name: "Info", color: "white", bgColor: "cyan" },
+    { name: "Light", color: "black", bgColor: "white" },
+    { name: "Success", color: "white", bgColor: "green" },
+    { name: "Dark", color: "white", bgColor: "black" },
+    { name: "Link", color: "blue", bgColor: "white" },
+  ];
+
+  buttonObj.forEach(function (elem) {
+    console.log(elem.bgColor);
+    var btn = document.createElement("button");
+    btn.innerText = elem.name;
+    btn.style.backgroundColor = elem.bgColor;
+    btn.style.color = elem.color;
+    document.querySelector("body").append(btn);
+  });
+</script>

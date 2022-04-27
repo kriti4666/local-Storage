@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input id="name" type="text" placeholder="Enter Name" value="">
+    <input id="mob" type="number" placeholder="Enter Phn" value="">
+    <input id="email" type="email" placeholder="Enter Email" value="">
+    <button id="btn" onclick="catchName()">Submit</button>
+
+    <select name="" id="gender">
+        <option value="">Select Gender</option>
+        <option value="male">M</option>
+        <option value="female">F</option>
+    </select>
+    <button onclick="gen()">Gender</button>
+
+    <h3 id="studentName">Show name</h3>
+    <h3 id="mobile">Show mob</h3>
+    <h3 id="mail">Show maill</h3>
+</body>
+</html>
+
+<script>
+    function catchName() {
+        var Name = document.getElementById("name").value;
+        var phn = document.getElementById("mob").value;
+        var email = document.getElementById("email").value
+        document.getElementById("studentName").innerText=Name;
+        document.getElementById("mobile").innerText=phn;
+        document.getElementById("mail").innerText=email;
+   }
+   function gen() {
+    var gender = document.getElementById("gender").value
+    console.log(gender)
+   }
+</script>
