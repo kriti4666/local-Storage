@@ -1,0 +1,31 @@
+*{
+    margin : 0px;
+    padding: 0px;
+}
+body{
+    background-color: rgb(231, 231, 224) ;
+}
+
+#navbar{
+    display: flex;
+    height: 80px;
+    background-color:white;
+    width: 100%;
+}
+.logo{
+    width: 20%;
+}
+
+.text{
+    width: 30%;
+    display: flex;
+    justify-content: space-evenly;
+    
+}
+.users{
+    width: 30%;
+    display: flex; 
+}
+.users>h2{
+    margin-left: 20px;
+}

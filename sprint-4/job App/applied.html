@@ -15,6 +15,28 @@
       <div><a href="bookmark.html">Bookmarks</a></div>
     </div>
 
+    <!-- sort by name -->
+    <select name="" id="sortName" onchange="handleNameSort()">
+      <option>Sort by Name</option>
+      <option value="ace">Ascending</option>
+      <option value="dec">Descending</option>
+    </select>
+
+    <!-- Sort by Salary -->
+    <select name="" id="sortSalary" onchange="sortBySalary()">
+      <option >Sort by Salary</option>
+      <option value="HTL">High to Low</option>
+      <option value="LTH">Low to High</option>
+    </select>
+
+    <!-- Filter by job category -->
+    <select name="" id="category" onchange="jobRole()">
+      <option value="">Filter by job category</option>
+      <option value="fsd">FSD</option>
+      <option value="Backend">BACKEND</option>
+      <option value="Frontend">FRONTEND</option>
+    </select>
+
     <main>
       <table>
         <thead>
@@ -38,6 +60,99 @@
     
     var bookmarkArr = JSON.parse(localStorage.getItem("Bookmarks")) || [];
     displayData(jobArray)
+
+    // Filter by job category:
+    
+    function jobRole() {
+    var selected = document.querySelector("#category").value;
+    console.log(selected)
+    var filterRole = jobArray.filter(function(elem){
+      return elem.applicantRole == selected;
+    });
+    console.log(jobRole);
+    displayData(jobArray);
+    }
+
+    // sort-Name
+    function handleNameSort(){
+      var selected = document.querySelector("#sortName").value;
+      console.log(selected);
+
+      if(selected=="ace"){
+        jobArray.sort(function(a, b){
+          var x = a.applicantName.toUpperCase();
+          var y = b.applicantName.toUpperCase();
+          if (x > y){
+            return 1;
+          }
+          else if(x<y){
+            return -1;
+          }
+          else{
+            return 0;
+          }
+        });
+        console.log(jobArray);
+        displayData(jobArray);
+      }
+
+      if(selected=="dec"){
+        jobArray.sort(function(a, b){
+          var x = a.applicantName.toUpperCase();
+          var y = b.applicantName.toUpperCase();
+          if (x > y){
+            return -1;
+          }
+          else if(x<y){
+            return 1;
+          }
+          else{
+            return 0;
+          }
+        });
+        console.log(jobArray);
+        displayData(jobArray);
+      }
+    }
+
+    // Sort by Salary
+
+    function sortBySalary() {
+      var selected = document.querySelector("#sortSalary").value;
+      
+      if(selected=="HTL"){
+        jobArray.sort(function(a, b){
+          if (a.applicantSalary > b.applicantSalary){
+            return 1;
+          }
+          else if(a.applicantSalary < b.applicantSalary){
+            return -1;
+          }
+          else{
+            return 0;
+          }
+        });
+        console.log(jobArray);
+        displayData(jobArray);
+      }
+
+
+      if(selected=="LTH"){
+        jobArray.sort(function(a, b){
+          if (a.applicantSalary > b.applicantSalary){
+            return -1;
+          }
+          else if(a.applicantSalary < b.applicantSalary){
+            return 1;
+          }
+          else{
+            return 0;
+          }
+        });
+        console.log(jobArray);
+        displayData(jobArray);
+      }
+    }
 
     // sum of all salary in the bookmark:
     var sum = jobArray.reduce(function(acc,elem){
